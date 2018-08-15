@@ -1,0 +1,22 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Focusing on furthering my understanding of    - Asynchronous callbacks   - Call Stack & Event Loop   - API's   - Pretty Printing Objects   - HTTP Requests   - Encoding User Input   - Abstracting Callbacks   - ES6 Promises   - Some random extra features",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kimathi-K101/Simple-weather-app.git"
+  },
+  "author": "Kimathi Kaai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kimathi-K101/Simple-weather-app/issues"
+  },
+  "homepage": "https://github.com/Kimathi-K101/Simple-weather-app#readme",
+  "dependencies": {
+    "request": "^2.73.0"
+  }
+}
