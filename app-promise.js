@@ -14,6 +14,10 @@ const argv = yargs
   .alias('help','h')
   .argv;
 
+if(!argv.a){
+  argv.a = '1301 Lombard St, Philadelphia, PA 19147, USA';
+}
+
 var encodedAddress = encodeURIComponent(argv.a);
 var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`;
 
@@ -31,7 +35,12 @@ axios.get(geocodeUrl).then((response) => {
 }).then((response) => {
   var temperature = response.data.currently.temperature;
   var apparentTemperature = response.data.currently.apparentTemperature;
-  console.log(`It feels like ${apparentTemperature}. But it is ${temperature}.`);
+
+  console.log(`Summary:`, response.data.currently.summary);
+  console.log(`Although it is ${temperature}, it feels like ${apparentTemperature}.`);
+  console.log(`Additionally, there is a ${response.data.currently.precipProbability}% of precipitation.`);
+  console.log(`If you plan on spending time outside, the UV index is ${response.data.currently.uvIndex}.`);
+
 }).catch((error) => {
   if(error.code === 'ENOTFOUND'){
     console.log('Unable to connect to API servers.')
